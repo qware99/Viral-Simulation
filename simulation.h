@@ -21,6 +21,9 @@
 #include "subject.h"
 #include "canvas.h"
 #include "statistics_handler.h"
+#include "RegularMovementStrategy.h"
+#include "LockdownMovementStrategy.h"
+#include "SocialLockdown.h"
 
 namespace corsim
 {
