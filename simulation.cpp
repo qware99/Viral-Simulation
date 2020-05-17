@@ -76,10 +76,12 @@ void Simulation::tick()
 
     RegularMovementStrategy regularStrategy;
     LockdownMovementStrategy lockdownStrategy;
+    SocialLockdown lockdown;
 
     // voor testen uncomment de strategy die je wil testen
-    //int numberInfected = regularStrategy.movement(dt, _subjects, count/30);
-    int numberInfected = lockdownStrategy.movement(dt, _subjects, count/30);
+    //int numberInfected = regularStrategy.movement(dt, _subjects, counter/30);
+    //int numberInfected = lockdownStrategy.movement(dt, _subjects, counter/30);
+    int numberInfected = lockdown.movement(dt, _subjects, counter/30)
 
     if(counter % 30 == 0)
     {
