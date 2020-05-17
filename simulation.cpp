@@ -74,18 +74,12 @@ void Simulation::tick()
         }
     }
 
-    int numberInfected = 0;
+    RegularMovementStrategy regularStrategy;
+    LockdownMovementStrategy lockdownStrategy;
 
-    for(Subject& s : _subjects)
-    {
-        s.set_x(s.x() + s.dx() * dt);
-        s.set_y(s.y() + s.dy() * dt);
-
-        if(s.infected())
-        {
-            numberInfected++;
-        }
-    }
+    // voor testen uncomment de strategy die je wil testen
+    //int numberInfected = regularStrategy.movement(dt, _subjects, count/30);
+    int numberInfected = lockdownStrategy.movement(dt, _subjects, count/30);
 
     if(counter % 30 == 0)
     {
